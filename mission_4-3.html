@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>mission_4-3</title>
+</head>
+<body>
+	<div id="omikuji">ここに表示</div>
+	<script>
+		var omikuji = new Array("大吉","中吉","小吉");
+        // var omikuji = ["大吉","中吉","小吉"]; でもOK
+
+		var number1 = Math.random();
+		var number2 = number1 * 3;
+		var number = Math.floor(number2);
+		var message = omikuji[number];
+
+		var object = document.getElementById("omikuji");
+		object.innerText = message;
+	</script>
+</body>
+</html>

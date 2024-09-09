@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>mission_4-4</title>
+    <style>
+    body{
+    margin: 0;
+    font-family: serif;
+    }
+
+    .box {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    }
+
+    .innerbox {
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #eee9d4;
+    }
+
+    p {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(8, 29, 65);
+    }
+
+    .bg {
+        background-size: 50px 50px;
+        background-image: radial-gradient(closest-side, rgba(25,68,142,0.2) 98%, rgba(25,68,142,0.15) 100%),
+            radial-gradient(circle at top left, rgba(25,68,142,0.05) 35%, rgba(255, 255, 255, 0) 35% 100%),
+            radial-gradient(circle at top right, rgba(25,68,142,0.05) 35%, rgba(255, 255, 255, 0) 35% 100%),
+            radial-gradient(circle at bottom left, rgba(25,68,142,0.05) 35%, rgba(255, 255, 255, 0) 35% 100%),
+            radial-gradient(circle at bottom right, rgba(25,68,142,0.05) 35%, rgba(255, 255, 255, 0) 35% 100%);
+        background-repeat: repeat;
+    }
+
+    button{
+        display: inline-block;
+        padding: 10px 40px;
+        border: solid 2px rgb(35, 73, 138);
+        font-family: serif;
+
+        position: relative;
+        &:hover {
+            background-color: #23498a;
+            color: white;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+    }
+
+    button::before {
+        content: "";
+        position: absolute;
+        border: solid 1px rgb(35, 73, 138);
+        top: 2px;
+        left: 2px;
+        bottom: 2px;
+        right: 2px;
+        }
+
+    #omikuji{
+        writing-mode: vertical-rl;
+        font-size: 50px;
+        text-align: center;
+        margin: 100px auto;
+        background-color: #f8f5e8;
+        height: 220px;
+        box-shadow: #d7cc9e 2px 2px 1.5px;
+    }
+    #omikuji:before{
+        content:' ';
+        display:inline-block;
+        width:70px;
+        height:70px;
+        background-image: radial-gradient(#23498a 25%, transparent 0),
+            radial-gradient(#23498a 25%, transparent 0),
+            radial-gradient(#23498a 25%, transparent 0),
+            radial-gradient(#23498a 25%, transparent 0),
+            radial-gradient(#23498a 25%, transparent 0);
+        background-position: 50% 0, 5% 40%, 95% 40%, 23% 95%, 78% 95%;
+        background-size: 40px 40px;
+        background-repeat:no-repeat;
+    }
+    </style>
+</head>
+<body>
+    <div class="box bg">
+        <div class="innerbox">
+            <p>今日の運勢は？</p>
+            <button onclick=omikujishow() id="button">おみくじを引く</button>
+            <div id="omikuji"></div>
+            <script src="mission_4-4.js"></script>
+        </div>
+    </div>
+</body>
+</html>
