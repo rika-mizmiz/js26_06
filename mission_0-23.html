@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=320, height=480, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes"><!-- for smartphone. ここは一旦、いじらなくてOKです。 -->
+        <meta charset="utf-8"><!-- 文字コード指定。ここはこのままで。 -->
+        <title>りかのプロフィール</title>
+        <style>
+            body{
+                background-color: aliceblue;
+                color: #242222;
+                font-family: 'Noto Sans JP', sans-serif;
+                padding: 2vw 5vw;
+            }
+            h1, h2, h3 {
+                font-family: 'Kaisei Opti', serif;
+            }
+            h1 {
+                font-size: 50px;
+                color: cornflowerblue;
+            }
+            h2 {
+                color: #123e8c;
+                font-size: 30px;
+            }
+            h3 {
+                color:#242222;
+                font-size: 25px;
+            }
+            a{
+                color: cornflowerblue;
+                font-weight: 500;
+                &:hover{
+                    color:mediumpurple;
+                }
+            }
+            li::marker{
+                color: #487bd9;
+                font-weight: 500;
+            }
+            ul{
+                padding-left: 20px;
+            }
+            img{
+                margin-bottom:10px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+
+    <!-- 見出し 第１レベル -->
+    <!--（氏名）の公開を避ける場合はイニシャルやニックネームでOK-->
+    <h1 id="midashi_1"> りかのプロフィール </h1>
+
+
+    <!--自分を象徴するような画像を入れてみよう-->
+    <!--画像も同じフォルダにアップロードすること-->
+    <img src="drive.jpg" alt="自分を象徴する写真など" title="プロフィール画像" width="320px" ><br>
+    （画像についてひとこと：先日、千里浜なぎさドライブウェイに行ってきました）
+
+    <hr>
+
+    <!-- 見出し 第２レベル ・以下、h2レベルで項目を色々書いていきましょう -->
+    <!-- 自己紹介で言いたい項目を見出しにいれて、文章をつくりましょう。項目名は編集OK。項目を足してもOK。 -->
+    <h2>所属など</h2>
+    工学部の化学系学科に所属しており、プログラミング経験はほとんどありません。<br>
+    大学の学祭実行委員会で公式サイトのデザインを担当していて実装にも興味が湧いたので今回参加することにしました。<br>
+    ちなみに直近の学祭で制作したサイトは<a href="https://gogatsusai.jp/97/visitor/" target="_blank">こちら</a>で、我ながらとても気に入っています。<br>
+
+
+    <h2>趣味や属性</h2>
+    友達とドライブに行くのが好きで、旅行に行った先々で車を借りて運転しています。<br>
+    自分から声をかけにいくのはあまり得意ではないので、たくさん話しかけてもらえるととても嬉しいです。<br>
+
+
+    <!-- HTMLで出来る色々な表現を試す -->
+    <!-- ↑文字に意味を持たせることもできます。strong は太字。ググったりして色々と調べてみましょう -->
+    <!-- 例として今回は「リスト表示」を作ってみましょう。項目数が３で足りないなら足してもOKです -->
+    <!-- 番号をふるなら ol タグ、番号がいらないなら ul タグ で囲って、項目は li タグで括ります。 -->
+    <!-- ol ・ ul 片方でOK -->
+    <h2>好きなアーティストトップ３</h2>
+    <strong> 私の好きなアーティストのトップ３です！</strong>いつかライブにも行ってみたいなと思っています。<br>
+    <!-- ↑文字に意味を持たせることもできます。strong は強調。太字になります。 -->
+
+    <ol>
+        <li>back number</li>
+        <ul>
+            <li>一体どんな人生を送ってきたらこんな言葉が出てくるんだろうと思ってしまうくらい、どの曲も歌詞が素敵で好きです。</li>
+            <li>『瞬き』、『水平線』、『HAPPY BIRTHDAY』etc...</li>
+        </ul>
+        <br>
+        <li>Mrs. GREEN APPLE</li>
+        <ul>
+            <li>高音まで伸び伸びとよく響く歌声が心地よくて、ドライブを盛り上げるのに欠かせません。</li>
+            <li>『Magic』、『ライラック』、『Love me, Love you』etc...</li>
+        </ul>
+        <br>
+        <li>ヨルシカ</li>
+        <ul>
+            <li>透明感のある曲調が好きで、気分が上がらない朝に聞いたりします。</li>
+            <li> 『花に亡霊』、『晴る』、『藍二乗』etc...</li>
+        </ul>
+    </ol>
+
+
+    <hr>
+
+    <!-- 以下は、見出しの名前は固定で、内容を編集してみましょう -->
+    <h2>その他</h2>
+    <!-- 見出し 第３レベル -->
+    <h3>使用PC</h3>
+    Mac
+
+    <h3>PC利用経験や、普段の使い方</h3>
+    大学に入学するまでは授業以外ではほとんどPCに触れたことがありませんでした。<br>
+    普段は大学のレポートを書いたり、調べ物をしたり、イラレ等でwebサイトやポスターのデザインをしたりするのに使っています。<br>
+
+    <h3>自分の強みや弱みなど</h3>
+    強み：満足のいくまで突き詰められるタイプです。<br>
+    弱み：気を抜くとダラダラと必要以上に時間をかけてしまいます...<br>
+
+
+    <h3>TECH-BASE参加にあたり、意気込み</h3>
+    精一杯がんばるので、これからよろしくお願いします！<br>
+
+
+    <hr>
+    <a href="#midashi_1"> このページのTOPへ </a> ／ <a href="https://www.google.co.jp/" target="_blank"> ググる </a>
+
+    <hr>
+
+    <!-- 以下は投稿フォーム欄ですが、今は＆このままでは機能しておらずエラーが発生します。 -->
+    <!-- したがって今はコピペするだけでOKです。スタートアップ以降のPHPミッションを進める際に、参考にしてください。 -->
+    <form method="POST" action="">
+        お名前：<input type="text" name="name"><br>
+        コメント：<input type="text" name="comment"><br>
+        <input type="submit" name="submit" value="送信">
+    </form>
+
+    </body>
+</html>
