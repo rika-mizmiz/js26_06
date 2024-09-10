@@ -1,15 +1,21 @@
 var time = 30;
 var score = 0;
 var currentPokemon = "";
+var succeed = [];
 var pokemonList = [];
 var timer;
 
-var maxRecord = getCookie("maxRecord") || 0; // cookie に保存された最高記録を取得。なければ 0 を返す。
+var maxRecord = getCookie("maxRecord") || 0; // cookie に保存された最高記録を取得。なければ 0 を返す
 
-// ページが読み込まれたときに最高記録を cookie から取得
+
+// ページが読み込まれたときに最高記録と成功したポケモンの名前を cookie から取得
 window.onload = function() {
     document.getElementById("high-score1").textContent = maxRecord;
     document.getElementById("high-score2").textContent = maxRecord;
+    const savedSucceed = getCookie("succeed");
+    if (savedSucceed) {
+        succeed = JSON.parse(savedSucceed);
+    }
 };
 
 
@@ -84,6 +90,9 @@ async function showNextPokemon() {
 document.getElementById("input").addEventListener("input", function() {
     // input に入力された値が currentPokemon と一致していれば、
     if (this.value === currentPokemon) {
+        // 配列 succeed にポケモンの名前を追加して cookie に保存
+        succeed.push(currentPokemon);
+        setCookie("succeed", JSON.stringify(succeed));
         // 成功数を 1 増やして更新し、input の値を空にして次のポケモンを表示
         score++;
         document.getElementById("score").textContent = score;
@@ -127,4 +136,16 @@ document.getElementById("restart").onclick = function() {
     // 前回のゲームのスコアをリセット
     score = 0;
     document.getElementById("score").textContent = score;
+};
+
+// ポップアップを表示する
+document.getElementById("show-popup").onclick = function() {
+    document.getElementById("popup").style.display = "flex";
+    // 成功したポケモンの名前をリスト表示
+    document.getElementById("pokemon-list").innerHTML = succeed.map((name) => `<li>${name}</li>`).join("");
+};
+
+// ポップアップを閉じる
+document.getElementById("close-popup").onclick = function() {
+    document.getElementById("popup").style.display = "none";
 };
