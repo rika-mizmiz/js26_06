@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ポケモンタイピングゲーム</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body{
+            color:#241915;
+            background-color: #f5ecbe;
+            overflow: hidden;
+        }
+        h1{
+            font-family: "DotGothic16";
+            font-size: 50px;
+            margin-top: -10px;
+            margin-left: -10px;
+            background-color: #FED823;
+            text-align: center;
+            color: #EA4F24;
+            padding: 25px;
+            width: 100%;
+        }
+        p{
+            margin: 0 auto;
+            font-size: 20px;
+        }
+        #passage{
+            width: max-content;
+            margin: 15vh auto;
+            padding: 20px;
+        }
+        #small{
+            font-size: 17px;
+        }
+        #records{
+            position: fixed;
+            top: 160px;
+            right: 110px;
+            font-size: 25px;
+            text-align: center;
+        }
+        #high-score{
+            font-size: 50px;
+            color: #EA4F24;
+        }
+        button{
+            display: block;
+            font-size: 20px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #f5ecbe;
+            color: #EA4F24;
+            border: 2px solid #EA4F24;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #EA4F24;
+            color: #f5ecbe;
+        }
+        #monster-ball{
+            position: fixed;
+            bottom: 100px;
+            left: 130px;
+            width: 150px;
+            height: 150px;
+            rotate: -20deg;
+        }
+        #game{
+            display: none;
+        }
+        #countdown{
+            position: fixed;
+            top: 160px;
+            right: 240px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #success{
+            position: fixed;
+            top: 230px;
+            right: 265px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #time, #score{
+            font-size: 45px;
+        }
+
+        #pokemon-image{
+            display: block;
+            margin: 50px auto 10px auto;
+            width: 250px;
+        }
+        #pokemon-name{
+            font-size: 30px;
+            text-align: center;
+        }
+        #input{
+            --webkit-appearance: none;
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 20px;
+            width: 200px;
+            border: none;
+            background-color: transparent;
+            border: 2px solid #EA4F24;
+            border-radius: 5px;
+            &:focus{
+                outline: none;
+            }
+            &::placeholder{
+                color: #605b59;
+            }
+        }
+
+        #result{
+            display: none;
+        }
+        #result div{
+            width: max-content;
+            margin: 140px auto 100px auto;
+            text-align: center;
+        }
+        #result span{
+            font-size: 40px;
+            line-height: 1.5;
+            color: #EA4F24;
+        }
+        #result p{
+            font-size: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>ポケモンタイピングゲーム</h1>
+    <img src="monster-ball.png" alt="monster-ball" id="monster-ball">
+    <div id="introduction">
+        <p id="records">最高記録<br><span id="high-score1">0</span> 回</p>
+        <div id="passage">
+            <p>これはタイピング練習ゲームです。<br>次々に表示されるポケモンの名前を速く正確にタイピングしていきましょう。<br>制限時間は 30 秒 です。スタートボタンを押すとゲームが始まります。</p>
+        </div>
+        <button id="start">スタート</button>
+    </div>
+
+    <div id="game" style="display:none;">
+        <p id="countdown">残り時間: <span id="time">30</span> 秒</p>
+        <p id="success">成功数: <span id="score">0</span> 回</p>
+        <img id="pokemon-image" src="" alt="ポケモン画像" width="150">
+        <p id="pokemon-name"></p>
+        <input type="text" id="input" placeholder="名前を入力">
+    </div>
+
+    <div id="result" style="display: none;">
+        <div id="score">
+            <p>今回の成功数<br><span id="final-score">0</span> 回</p>
+            <p>今までの最高成功数<br><span id="high-score2">0</span> 回</p>
+        </div>
+        <button id="restart">もう一度あそぶ</button>
+    </div>
+
+    <script src="mission_6-2.js"></script>
+</body>
+</html>
