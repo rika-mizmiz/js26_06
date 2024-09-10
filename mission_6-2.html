@@ -134,6 +134,52 @@
             font-size: 20px;
             margin: 20px 0;
         }
+        #popup{
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            position: fixed;
+            width: 40%;
+            height: 85%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #f5ecbe;
+            border: 500px solid rgba(43, 35, 33, 0.5);
+            z-index: 100;
+        }
+        #popup h2{
+            position: absolute;
+            font-size: 30px;
+            top: 20px;
+        }
+        #close-popup{
+            display: block;
+            position:absolute;
+            bottom: 20px;
+            padding: 10px 20px;
+            background-color: #f5ecbe;
+            color: #EA4F24;
+            border: 2px solid #EA4F24;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #close-popup:hover {
+            background-color: #EA4F24;
+            color: #f5ecbe;
+        }
+        ul{
+            list-style: none;
+            font-size: 20px;
+            line-height: 1.3;
+            margin: 20px, auto;
+            overflow-y: scroll;
+            height: 65%;
+        }
     </style>
 </head>
 <body>
@@ -145,6 +191,12 @@
             <p>これはタイピング練習ゲームです。<br>次々に表示されるポケモンの名前を速く正確にタイピングしていきましょう。<br>制限時間は 30 秒 です。スタートボタンを押すとゲームが始まります。</p>
         </div>
         <button id="start">スタート</button>
+        <button id="show-popup">入力に成功したポケモンを見る</button>
+        <div id="popup">
+            <h2>入力に成功したポケモン一覧</h2>
+            <ul id="pokemon-list"></ul>
+            <button id="close-popup">閉じる</button>
+        </div>
     </div>
 
     <div id="game" style="display:none;">
